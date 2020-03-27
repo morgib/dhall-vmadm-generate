@@ -29,7 +29,7 @@ category:            System
 extra-source-files:  CHANGELOG.md
 
 
-executable dhall-vmadm
+executable dhall-vmadm-generate
   ghc-options: -Wall -fdefer-typed-holes
   -- .hs or .lhs file containing the Main module.
   main-is:             Main.hs
