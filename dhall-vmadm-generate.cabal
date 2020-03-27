@@ -1,6 +1,6 @@
 cabal-version:       2.4
 
-name:                generate-dhall-vmadm
+name:                dhall-vmadm-generate
 
 version:             0.1.0.0
 
