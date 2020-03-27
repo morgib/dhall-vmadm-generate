@@ -1,0 +1,69 @@
+cabal-version:       2.4
+
+name:                generate-dhall-vmadm
+
+version:             0.1.0.0
+
+synopsis:            Generate Dhall interface for SmartOS vmadm
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+license:             BSD-3-Clause
+
+license-file:        LICENSE
+
+author:              Morgan Gibson
+maintainer:          mgibson1987@gmail.com
+
+-- A copyright notice.
+-- copyright:
+
+category:            System
+
+-- Extra files to be distributed with the package, such as examples or a
+-- README.
+extra-source-files:  CHANGELOG.md
+
+
+executable dhall-vmadm
+  ghc-options: -Wall -fdefer-typed-holes
+  -- .hs or .lhs file containing the Main module.
+  main-is:             Main.hs
+
+  -- Modules included in this executable, other than Main.
+  other-modules: PropTable.Parse
+               , PropTable.Types
+               , Payload.Description
+               , Payload.Dhall.Type
+               , Payload.Dhall.Render
+               , Fixups.PropTable
+
+  -- LANGUAGE extensions used by modules in this package.
+  -- other-extensions:
+
+  -- Other library packages from which modules are imported.
+  build-depends:       base ^>=4.12.0.0
+                     , aeson
+                     , dhall
+                     , attoparsec
+                     , bytestring
+                     , text
+                     , pretty-simple
+                     , unordered-containers
+                     , prettyprinter
+                     , prettyprinter-ansi-terminal
+                     , lens
+                     , directory
+                     , filepath
+                     , hashable
+
+  -- Directories containing source files.
+  hs-source-dirs:      src
+
+  -- Base language which the package is written in.
+  default-language:    Haskell2010
+
